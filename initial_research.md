@@ -63,6 +63,29 @@ This work introduces an attention-based deep reinforcement learning model to sol
 
 ---
 
+### A machine learning approach for enhancing supply chain visibility with graph-based learning
+**Domain**: Supply Chain / Logistics  
+**ML Area**: Graph Convolutional Networks  
+
+**Authors**: Mohammadreza Nazari, Afshin Oroojlooy, Lawrence Snyder, Martin Takáč  
+**Published**: NeurIPS Workshop, 2018  
+
+**Abstract (Summary)**:  
+In today’s globalised trade, supply chains form complex networks spanning multiple organisations and even countries, making them highly vulnerable to disruptions. These vulnerabilities, highlighted by recent global crises, underscore the urgent need for improved visibility and resilience of the supply chain. However, data-sharing limitations often hinder the achievement of comprehensive visibility between organisations or countries due to privacy, security, and regulatory concerns. Moreover, most existing research studies focused on individual firm- or product-level networks, overlooking the multifaceted interactions among diverse entities that characterise real-world supply chains, thus limiting a holistic understanding of supply chain dynamics. To address these challenges, we propose a novel approach that integrates Federated Learning (FL) and Graph Convolutional Neural Networks (GCNs) to enhance supply chain visibility through relationship prediction in supply chain knowledge graphs. FL enables collaborative model training across countries by facilitating information sharing without requiring raw data exchange, ensuring compliance with privacy regulations and maintaining data security. GCNs empower the framework to capture intricate relational patterns within knowledge graphs, enabling accurate link prediction to uncover hidden connections and provide comprehensive insights into supply chain networks. Experimental results validate the effectiveness of the proposed approach, demonstrating its ability to accurately predict relationships within country-level supply chain knowledge graphs. This enhanced visibility supports actionable insights, facilitates proactive risk management, and contributes to the development of resilient and adaptive supply chain strategies, ensuring that supply chains are better equipped to navigate the complexities of the global economy.
+
+**Why it’s interesting**:  
+- Global supply chains are increasingly vulnerable due to geopolitical tensions, pandemics, and climate events — making resilience and visibility a critical challenge.
+
+- This paper tackles the data-sharing dilemma across organizational and national boundaries by using Federated Learning, which is highly relevant in regulated, privacy-sensitive environments.
+
+- Unlike prior work focusing on individual firm-level networks, this approach leverages Graph Convolutional Networks on country-level supply chain knowledge graphs, enabling a holistic understanding of interdependencies across the supply network.
+
+- The combination of FL + GCN is novel and practically viable, showing potential to drive real-time risk detection, hidden link discovery, and policy-compliant collaboration.
+
+- It opens up future research opportunities in areas like cross-border inventory coordination, resilient logistics planning, or decentralized anomaly detection in global trade.
+
+
+
 ## 🔍 Topic Categorization
 
 **Techniques:**
