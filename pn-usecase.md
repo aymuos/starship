@@ -1,4 +1,7 @@
 PN-Usecase
+Abstract
+Develop a predictive model that predicts parcel level delays and container level delays. At every checkpoint where parcel is scanned. Based on historical events we need to predict the duration of delivery for the next level.
+
 
 Idea : 
 
