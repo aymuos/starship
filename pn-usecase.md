@@ -519,3 +519,6 @@ This RL layer sits above your per-checkpoint predictors, learning to orchestrate
 - https://www.kaggle.com/datasets/nicolemachado/transportation-and-logistics-tracking-dataset/data
 - https://pubsonline.informs.org/doi/10.1287/trsc.2022.1173
 - https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis/data?select=tokenized_access_logs.csv
+- 
+Novel Data Analytics Meets Conventional Container Shipping: Predicting
+Delays by Comparing Various Machine Learning Algorithms
