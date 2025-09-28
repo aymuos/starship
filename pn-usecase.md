@@ -522,3 +522,7 @@ This RL layer sits above your per-checkpoint predictors, learning to orchestrate
 - 
 Novel Data Analytics Meets Conventional Container Shipping: Predicting
 Delays by Comparing Various Machine Learning Algorithms
+
+
+https://www.uber.com/en-IN/blog/deepeta-how-uber-predicts-arrival-times/
+
