@@ -1,5 +1,7 @@
 ipywidgets
 dowhy
 pillow
+geopandas
+pyyaml
 
 
