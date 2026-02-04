@@ -3,5 +3,6 @@ dowhy
 pillow
 geopandas
 pyyaml
+hmmlearn
 
 

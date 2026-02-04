@@ -1,0 +1,92 @@
+# ==========================================
+# SEARCH FOR POSTMAN IDs IN DELIVERY_FIVE_CITIES.CSV
+# ==========================================
+
+import pandas as pd
+
+# Step 1: Define your 5 postman IDs to search for
+# These should be the hashed postman_id values from your 20s sampling data
+postman_ids = [
+    "0c032cafea40c06fa6337701caf35607",  # Replace with your actual IDs
+    "18ff78d2069125937a847fb701a9db6c",
+    "df0b594618d1ba6f619e4e7dd034447c",
+    "05cceaaa5db96756294dd6d573fd865d",
+    "f29e97ef8398477abb72b852b16c91c0"
+]
+
+# Step 2: Read the delivery_five_cities.csv file
+print("Reading delivery_five_cities.csv...")
+delivery_df = pd.read_csv("../LaDe/delivery_five_cities.csv")
+
+print(f"Total records: {len(delivery_df)}")
+print(f"Unique delivery users: {delivery_df['delivery_user_id'].nunique()}")
+print(f"Columns: {delivery_df.columns.tolist()}\n")
+
+# Step 3: City name mapping
+city_mapping = {
+    '上海市': 'Shanghai',
+    '重庆市': 'Chongqing', 
+    '杭州市': 'Hangzhou',
+    '烟台市': 'Yantai',
+    '吉林市': 'Jilin'
+}
+
+# Step 4: Search for each postman ID
+results = []
+
+for pid in postman_ids:
+    matches = delivery_df[delivery_df['delivery_user_id'] == pid]
+    
+    if not matches.empty:
+        cities_cn = matches['from_city_name'].unique()
+        cities_en = [city_mapping.get(city, city) for city in cities_cn]
+        
+        results.append({
+            'postman_id': pid,
+            'found': 'YES',
+            'cities': ', '.join(cities_en),
+            'order_count': len(matches),
+            'min_date': matches['ds'].min(),
+            'max_date': matches['ds'].max()
+        })
+        
+        print(f"✓ Found {pid[:20]}...")
+        print(f"  Cities: {', '.join(cities_en)}")
+        print(f"  Orders: {len(matches)}")
+        print(f"  Dates: {matches['ds'].min()} to {matches['ds'].max()}\n")
+    else:
+        results.append({
+            'postman_id': pid,
+            'found': 'NO',
+            'cities': 'N/A',
+            'order_count': 0,
+            'min_date': None,
+            'max_date': None
+        })
+        print(f"✗ NOT FOUND: {pid[:20]}...\n")
+
+# Step 5: Create summary DataFrame
+results_df = pd.DataFrame(results)
+print("\n" + "="*80)
+print("SUMMARY TABLE")
+print("="*80)
+print(results_df)
+
+# Step 6: Get detailed data for found postman IDs
+found_ids = results_df[results_df['found'] == 'YES']['postman_id'].tolist()
+
+if found_ids:
+    print("\n" + "="*80)
+    print("DETAILED DATA FOR FOUND POSTMAN IDs")
+    print("="*80)
+    
+    detailed_data = delivery_df[delivery_df['delivery_user_id'].isin(found_ids)]
+    print(f"\nTotal delivery records: {len(detailed_data)}")
+    print("\nSample data:")
+    print(detailed_data[['delivery_user_id', 'from_city_name', 'order_id', 'ds']].head(20))
+    
+    # Pivot table by city
+    pivot = detailed_data.groupby(['delivery_user_id', 'from_city_name']).size().reset_index(name='count')
+    pivot['city_en'] = pivot['from_city_name'].map(city_mapping)
+    print("\nOrders by Postman and City:")
+    print(pivot[['delivery_user_id', 'city_en', 'count']])
