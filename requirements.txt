@@ -4,5 +4,7 @@ pillow
 geopandas
 pyyaml
 hmmlearn
+polars 
+pyarrow
 
 
