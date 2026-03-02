@@ -1,0 +1,11 @@
+### Dataset analysis
+
+- Experiments use a real package pick-up dataset from Hangzhou (2021-07-10 to 2021-10-10) with 8,600 AOIs, 550 couriers, and routes up to 77 locations and 45 AOIs (averages 8.76 locations and 4.34 AOIs),
+filtered to ≤20 locations and ≤10 AOIs per sample for training.
+The split is 65/17/10 days for train/validation/test, 
+with average actual arrival times near one hour and empirical evidence that AOI transfers are far fewer than location-level transfers (≈6.20 vs 50.97), supporting the AOI-first transfer prior.
+
+- Graph transformer architectures could also replace or augment GAT-e modules to better capture long-range dependencies in courier routes
+-  integrating causal reasoning into route and time prediction could be highly impactful. This could help identify which factors actually cause delays versus mere correlations, 
+    leading to more robust predictions and better intervention strategies. Causal graphs could model relationships between weather, traffic, courier behavior, and delivery performance
+- 

@@ -207,12 +207,24 @@ marimo/_lsp/
 __marimo__/
 
 
-didi_dataset/*
-LaDe/*
-processed/roads_translated_motherfile.csv
-processed/trajectory_spacegroup.pkl
-Paper_r/M2G4RTP_A_Multi-Level_and_Multi-Task_Graph_Model_for_Instant-Logistics_Route_and_Time_Joint_Prediction.pdf
+legacy/didi_dataset/*
+legacy/LaDe/*
+legacy/processed/roads_translated_motherfile.csv
+legacy/processed/trajectory_spacegroup.pkl
+legacy/Paper_r/M2G4RTP_A_Multi-Level_and_Multi-Task_Graph_Model_for_Instant-Logistics_Route_and_Time_Joint_Prediction.pdf
 
-processed/per_postman_pickles/**
+legacy/processed/per_postman_pickles/*
 
-processed/featRecons/chq1.csv
+legacy/processed/featRecons/chq1.csv
+
+legacy/causalPlayground/pcmci_ready
+dataset/PROCESSED/*
+legacy/causalPlayground/raw_data/package_feature.csv
+legacy/weather_info/*
+.gitignore
+legacy/processed/unique_postman_counts_full.csv
+legacy/processed/d5c/chongqing/chongqing_data.csv
+legacy/old/weather_data_three_cities.csv
+legacy/processed/d5c/*
+
+legacy/processed/temp/trajectory.parquet
