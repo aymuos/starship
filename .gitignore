@@ -228,3 +228,4 @@ legacy/old/weather_data_three_cities.csv
 legacy/processed/d5c/*
 
 legacy/processed/temp/trajectory.parquet
+dataset/*
